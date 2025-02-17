@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/darktone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+#item-list,
+#favorite-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.item,
+.favorite-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background: #1f1f1f;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin-top: 10px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+}
+
+.favorite-btn {
+    background: #ddd;
+}
+
+.favorite-btn.active {
+    background: gold;
+}
+
+#clear-favorites {
+    background: red;
+    color: white;
+    margin-top: 20px;
+}
+/*nav*/
+.logo h1 {
+    font-size: 30px;
+    color: #ffffff;
+    margin-left: 20px;
+}
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1f1f1f;
+        padding: 10px 20px;
+    }
+
+    .menu-items {
+        display: flex;
+        gap: 25px;
+    }
+
+    .menu-item {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+    }
+    .menu-item:hover {
+        transform: scale(1.1);
+        color: #00ac7c;
+    }
+
+    .menu-item-home {
+        color: #00ac7c;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-item-home i {
+        margin-right: 8px;
+    }
+
+    .menu-item i {
+        margin-right: 8px;
+    }
+
+    .bottom-nav {
+        display: none;
+        /* ซ่อนเมนูด้านล่างสำหรับจอใหญ่ */
+    }
+}
+
+/* เมนูด้านล่างสำหรับมือถือ */
+@media (max-width: 767px) {
+    .navbar {
+        display: none;
+        /* ซ่อนเมนูด้านบนสำหรับมือถือ */
+    }
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1f1f1f;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .bottom-nav .menu-item {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .bottom-nav .menu-item:hover{
+        transform: scale(1.1);
+        color: #00ac7c;
+    }
+
+    .bottom-nav .menu-item-home {
+        color: #00ac7c;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .bottom-nav .menu-item-home i {
+        font-size: 20px;
+        display: block;
+    }
+
+
+    .bottom-nav .menu-item i {
+        font-size: 20px;
+        display: block;
+    }
+
+    .bottom-nav .menu-item p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+/*nav*/
+.head {
+    margin-top: 20px;
+}
+.boxline{
+    height: 5px;
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #ffffff;
+    mask-image: linear-gradient(to right,
+            transparent,
+            #000000 20% 80%,
+            transparent);
+}
+.boxx{
+    height: 10px;
+}

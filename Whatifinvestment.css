@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('img/darktone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.bigbox{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 30px #ffffff;
+}
+
+.head {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.select-container, .portfolio-container {
+    background: #1f1f1f;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+input, select, button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #ffffff;
+    color: #1f1f1f;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#portfolio-list div {
+    background: #fdfdfd;
+    color: #1f1f1f;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+canvas {
+    margin-top: 20px;
+    background: #1f1f1f;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.logo h1 {
+    font-size: 30px;
+    color: white;
+    margin-left: 20px;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1f1f1f;
+        padding: 10px 20px;
+    }
+
+    .menu-items {
+        display: flex;
+        gap: 25px;
+    }
+
+    .menu-item {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+    }
+    .menu-item:hover {
+        transform: scale(1.1);
+        color: #00ac7c;
+    }
+
+    .menu-item-function {
+        color: #00ac7c;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-item-function i {
+        margin-right: 8px;
+    }
+
+    .menu-item i {
+        margin-right: 8px;
+    }
+
+    .bottom-nav {
+        display: none;
+        /* ซ่อนเมนูด้านล่างสำหรับจอใหญ่ */
+    }
+}
+
+/* เมนูด้านล่างสำหรับมือถือ */
+@media (max-width: 767px) {
+    .navbar {
+        display: none;
+        /* ซ่อนเมนูด้านบนสำหรับมือถือ */
+    }
+
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1f1f1f;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+    .bottom-nav .menu-item {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    .bottom-nav .menu-item:hover{
+        transform: scale(1.1);
+        color: #00ac7c;
+    }
+
+    .bottom-nav .menu-item-function {
+        color: #00ac7c;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .bottom-nav .menu-item-function i {
+        font-size: 20px;
+        display: block;
+    }
+
+
+    .bottom-nav .menu-item i {
+        font-size: 20px;
+        display: block;
+    }
+
+    .bottom-nav .menu-item p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
