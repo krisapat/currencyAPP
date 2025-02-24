@@ -8,6 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="CurrencyConverter.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -19,8 +24,14 @@
         <div class="menu-items">
             <a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i>Home</a>
             <a href="mainfunction.html" class="menu-item-function"><i class="fa-solid fa-calculator"></i>Function</a>
-            <a href="#" class="menu-item"><i class="fas fa-info-circle"></i>About us</a>
+            <a href="aboutus.html" class="menu-item"><i class="fas fa-info-circle"></i>About us</a>
+            <!-- เพิ่ม login -->
+            <form action="../currencyApp/loginSystem/regPage.php">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <input class="login-btn" type="submit" value="Login" />
+            </form>
         </div>
+
     </div>
     <!-- เมนูด้านล่างสำหรับมือถือ -->
     <div class="bottom-nav">
@@ -32,7 +43,7 @@
             <i class="fa-solid fa-calculator"></i>
             <p>Function</p>
         </a>
-        <a href="#" class="menu-item">
+        <a href="aboutus.html" class="menu-item">
             <i class="fas fa-info-circle"></i>
             <p>About us</p>
         </a>
@@ -40,8 +51,8 @@
     <!--navbar end-->
     <div class="bigbox">
         <div class="container">
-            <h2>Currency Converter</h2>
-            <input type="number" id="amount" placeholder="Enter amount" value="1">
+            <h1>Currency Converter</h1>
+            <input class="input" type="number" id="amount" placeholder="Enter amount" value="1">
             <div>
                 <select id="fromCurrency">
                     <option value="USD">USD</option>

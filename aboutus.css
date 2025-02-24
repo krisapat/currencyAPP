@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('img/darktone.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-family: "IBM Plex Sans", serif;
+    font-weight: 500;
+}
+
+.head {
+    margin-top: 75px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/*conetentmem*/
+.conetentmem {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.member-card {
+    width: 100%;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.member-card:hover {
+    transform: scale(1.05);
+    border: #fff 1px solid;
+    box-shadow: 1px 1px 30px #ffffff;
+}
+
+.member-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+
+
+.member-info {
+    margin-left: 25px;
+    font-family: "IBM Plex Sans Thai", serif;
+    font-weight: 500;
+}
+
+.member-info h1 {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .member-card {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .member-card img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .member-info {
+        margin-left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/*nav*/
+.logo h1 {
+    font-size: 30px;
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.menu-items .login-btn {
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1f1f1f;
+        padding: 10px 20px;
+        position: fixed;
+        width: 100%;
+        height: 55px;
+        z-index: 1;
+    }
+
+    .menu-items {
+        display: flex;
+        gap: 25px;
+    }
+
+    .menu-item {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+    }
+
+    .menu-item:hover {
+        transform: scale(1.1);
+        color: #00ac7c;
+    }
+
+    .menu-item-function {
+        color: #00ac7c;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-item-function i {
+        margin-right: 8px;
+    }
+
+    .menu-item i {
+        margin-right: 8px;
+    }
+
+    .bottom-nav {
+        display: none;
+        /* ซ่อนเมนูด้านล่างสำหรับจอใหญ่ */
+    }
+}
+
+/* เมนูด้านล่างสำหรับมือถือ */
+@media (max-width: 767px) {
+    .navbar {
+        display: none;
+        /* ซ่อนเมนูด้านบนสำหรับมือถือ */
+    }
+
+    .bottom-nav {
+        height: 55px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1f1f1f;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+        z-index: 1;
+    }
+
+    .bottom-nav .menu-item {
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .bottom-nav .menu-item:hover {
+        transform: scale(1.1);
+        color: #00ac7c;
+    }
+
+    .bottom-nav .menu-item-function {
+        color: #00ac7c;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .bottom-nav .menu-item-function i {
+        font-size: 20px;
+        display: block;
+    }
+
+
+    .bottom-nav .menu-item i {
+        font-size: 20px;
+        display: block;
+    }
+
+    .bottom-nav .menu-item p {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+
+/*nav end*/
+.button-link-button {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+    background: #1f1f1f;
+    border: solid #ffffff28 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.button-link-button h1 {
+    font-size: 25px;
+}
+
+.button-link {
+    display: flex;
+}
+.box {
+    height: 75px;
+}

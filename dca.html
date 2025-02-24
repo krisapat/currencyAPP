@@ -8,7 +8,13 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="dca.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <!--navbar-->
     <div class="navbar">
@@ -18,7 +24,12 @@
         <div class="menu-items">
             <a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i>Home</a>
             <a href="mainfunction.html" class="menu-item-function"><i class="fa-solid fa-calculator"></i>Function</a>
-            <a href="#" class="menu-item"><i class="fas fa-info-circle"></i>About us</a>
+            <a href="aboutus.html" class="menu-item"><i class="fas fa-info-circle"></i>About us</a>
+            <!-- เพิ่ม login -->
+            <form action="../currencyApp/loginSystem/regPage.php">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <input class="login-btn" type="submit" value="Login" />
+            </form>
         </div>
     </div>
     <!-- เมนูด้านล่างสำหรับมือถือ -->
@@ -31,34 +42,37 @@
             <i class="fa-solid fa-calculator"></i>
             <p>Function</p>
         </a>
-        <a href="#" class="menu-item">
+        <a href="aboutus.html" class="menu-item">
             <i class="fas fa-info-circle"></i>
             <p>About us</p>
         </a>
     </div>
     <!--navbar end-->
-    <div class="container">
-        <h1 class="head">คำนวณการลงทุนแบบ DCA</h1>
-        <form id="investmentForm">
-            <label for="initialAmount">เงินต้น :</label>
-            <input type="number" id="initialAmount" required>
+    <div class="bigbox">
+        <div class="container">
+            <h1 class="head">คำนวณการลงทุนแบบ DCA</h1>
+            <form class="from" id="investmentForm">
+                <label for="initialAmount">เงินต้น :</label>
+                <input class="input" type="number" id="initialAmount" required>
 
-            <label for="monthlyContribution">เงินที่เติมรายเดือน :</label>
-            <input type="number" id="monthlyContribution" required>
+                <label for="monthlyContribution">เงินที่เติมรายเดือน :</label>
+                <input class="input" type="number" id="monthlyContribution" required>
 
-            <label for="annualReturn">กำไรต่อปี (%) :</label>
-            <input type="number" id="annualReturn" required>
+                <label for="annualReturn">กำไรต่อปี (%) :</label>
+                <input class="input" type="number" id="annualReturn" required>
 
-            <label for="years">ระยะเวลากี่ปี:</label>
-            <input type="number" id="years" required>
-        </form>
+                <label for="years">ระยะเวลากี่ปี:</label>
+                <input class="input" type="number" id="years" required>
+            </form>
 
-        <div id="result" class="result">
-            <h2>ผลลัพธ์การลงทุน</h2>
-            <p id="totalAmount">กรุณากรอกข้อมูลให้ครบ</p>
-            <canvas id="investmentChart"></canvas> <!-- กราฟ -->
+            <div id="result" class="result">
+                <h2>ผลลัพธ์การลงทุน</h2>
+                <p id="totalAmount">กรุณากรอกข้อมูลให้ครบ</p>
+                <canvas id="investmentChart"></canvas> <!-- กราฟ -->
+            </div>
         </div>
     </div>
     <script src="dcs.js"></script>
 </body>
+
 </html>
