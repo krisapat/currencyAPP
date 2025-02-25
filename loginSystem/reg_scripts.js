@@ -5,14 +5,22 @@ const regForm = document.getElementById("register");
 
 
 regButton.addEventListener('click', function(){
-    loginForm.style.display = "none";
-    regForm.style.display = "block";
+    loginForm.style.display = "none";   // ซ่อนหน้า Login
+    regForm.style.display = "flex";     // แสดงหน้า Register
+    regForm.style.flexDirection = "column"; 
+    regForm.style.justifyContent = "center"; 
+    regForm.style.alignItems = "center"; 
 })
 
 loginButton.addEventListener('click', function(){
-    loginForm.style.display = "block";
-    regForm.style.display = "none";
+    regForm.style.display = "none";  // ซ่อนหน้า Register
+    loginForm.style.display = "flex"; // แสดงหน้า Login
+    loginForm.style.flexDirection = "column"; 
+    loginForm.style.justifyContent = "center"; 
+    loginForm.style.alignItems = "center"; 
 })
+
+
 
 // แจ้งเตือน error
 function showError(message){
