@@ -28,21 +28,44 @@ if ($result->num_rows === 0) {
 $user = $result->fetch_assoc();
 $stmt->close();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset your password</title>
+    <link rel="stylesheet" href="../regPage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 
-<div class="container" id="reset-password">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Currensa</h1>
+        <p>Let us be the part of your investing journey</p>
+    </div>
+    <div class="container" id="reset-password">
     <h1 class="form-title">Reset your password</h1>
     <form method="POST" action="">
         <div class="input-group">
-            <label for="password">รหัสผ่านใหม่:</label>
-            <input type="password" name="password" required>
+            <i class="fas fa-lock"></i>
+            <label for="password"></label>
+            <input type="password" name="password" placeholder="Password" required>
         </div>
         <div class="input-group">
-            <label for="confirm_password">ยืนยันรหัสผ่านใหม่:</label>
-            <input type="password" name="confirm_password" required>
+            <i class="fas fa-lock"></i>
+            <label for="confirm_password"></label>
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
         </div>
-        <button type="submit">รีเซ็ตรหัสผ่าน</button>
+        <button class="btn" type="submit">รีเซ็ตรหัสผ่าน</button>
     </form>
 </div>
+</body>
+</html>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
