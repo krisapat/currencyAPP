@@ -74,12 +74,12 @@ body {
     color: #ffffff;
     margin-left: 20px;
 }
-.menu-items .login-btn{
+.login-btn{
     background-color: transparent;
     border: none;
     color: #ffffff;
     font-size: 16px;
-    
+
 }
 @media (min-width: 768px) {
     .navbar {
@@ -111,7 +111,7 @@ body {
         color: #00ac7c;
     }
 
-    .menu-item-function {
+    .menu-item-home {
         color: #00ac7c;
         text-decoration: none;
         font-size: 16px;
@@ -119,7 +119,7 @@ body {
         align-items: center;
     }
 
-    .menu-item-function i {
+    .menu-item-home i {
         margin-right: 8px;
     }
 
@@ -141,7 +141,6 @@ body {
     }
 
     .bottom-nav {
-        height: 55px;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -150,6 +149,7 @@ body {
         display: flex;
         justify-content: space-around;
         padding: 10px;
+        height: 55px;
     }
 
     .bottom-nav .menu-item {
@@ -163,26 +163,27 @@ body {
         color: #00ac7c;
     }
 
-    .bottom-nav .menu-item-function {
+    .bottom-nav .menu-item-home {
         color: #00ac7c;
         text-align: center;
         text-decoration: none;
+        font-size: 15px;
+        margin-top: 5px;
     }
 
-    .bottom-nav .menu-item-function i {
-        font-size: 20px;
-        display: block;
+    .bottom-nav .menu-item-home i {
+        font-size: 15px;
+
     }
 
 
     .bottom-nav .menu-item i {
-        font-size: 20px;
-        display: block;
+        font-size: 15px;
     }
 
     .bottom-nav .menu-item p {
-        font-size: 12px;
+        font-size: 15px;
         margin-top: 5px;
     }
 }
-/*nav end*/
+/*nav*/
