@@ -48,7 +48,7 @@ body {
 }
 
 .member-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
     border: #fff 1px solid;
     box-shadow: 1px 1px 30px #ffffff;
 }
