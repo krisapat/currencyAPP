@@ -7,6 +7,11 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="mainhome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -18,7 +23,14 @@
         <div class="menu-items">
             <a href="index.html" class="menu-item-home"><i class="fa-solid fa-house"></i>Home</a>
             <a href="mainfunction.html" class="menu-item"><i class="fa-solid fa-calculator"></i>Function</a>
-            <a href="#" class="menu-item"><i class="fas fa-info-circle"></i>About us</a>
+            <a href="aboutus.html" class="menu-item"><i class="fas fa-info-circle"></i>About us</a>
+
+            <!-- เพิ่ม login -->
+            <form action="../currencyApp/loginSystem/regPage.php">
+                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <input class="login-btn" type="submit" value="Login" />
+            </form>
+
         </div>
     </div>
     <!-- เมนูด้านล่างสำหรับมือถือ -->
@@ -31,40 +43,41 @@
             <i class="fa-solid fa-calculator"></i>
             <p>Function</p>
         </a>
-        <a href="#" class="menu-item">
+        <a href="aboutus.html" class="menu-item">
             <i class="fas fa-info-circle"></i>
             <p>About us</p>
         </a>
     </div>
     <!--navbar-->
-    <h1 class="head">รายการโปรด</h1>
-    <button id="clear-favorites">ลบทั้งหมด</button>
-    <div id="favorite-list"></div>
-    <h1>รายการสินทรัพย์</h1>
+    <h1 class="head">List of assets</h1>
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="ค้นหาหุ้น...">
+        <a href="fav.html" class="fav-link">Favorite</a>
+    </div>
     <div id="item-list">
         <div class="item">
-            <h3>NVDA</h3>
-            <div class="boxline"></div>
-            <div class="boxx"></div>
+            <div class="item-head">
+                <h3>NVDA</h3>
+                <button class="favorite-btn" data-title="NVDA" data-content="เนื้อหาของรายการที่ 1">☆</button>
+            </div>
             <div class="tradingview-widget-container">
                 <script type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"> { "symbol": "NASDAQ:NVDA", "width": "100%", "height": "220", "locale": "th", "dateRange": "1D", "colorTheme": "dark", "isTransparent": false }</script>
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"> { "symbol": "NASDAQ:NVDA", "width": "100%", "height": "160", "locale": "th", "dateRange": "1D", "colorTheme": "dark", "isTransparent": false }</script>
             </div>
-            <button class="favorite-btn" data-title="NVDA" data-content="เนื้อหาของรายการที่ 1">☆
-                Favorite</button>
         </div>
 
         <div class="item">
-            <h3>PLTR</h3>
-            <div class="boxline"></div>
-            <div class="boxx"></div>
+            <div class="item-head">
+                <h3>PLTR</h3>
+                <button class="favorite-btn" data-title="PLTR" data-content="เนื้อหาของรายการที่ 2">☆</button>
+            </div>
             <div class="tradingview-widget-container">
                 <script type="text/javascript"
                     src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
                         {
                             "symbol": "NASDAQ:PLTR",
                                 "width": "100%",
-                                    "height": "220",
+                                    "height": "160",
                                         "locale": "th",
                                             "dateRange": "1D",
                                                 "colorTheme": "dark",
@@ -72,20 +85,19 @@
                         }
                     </script>
             </div>
-            <button class="favorite-btn" data-title="PLTR" data-content="เนื้อหาของรายการที่ 2">☆
-                Favorite</button>
         </div>
         <div class="item">
-            <h3>AMZN</h3>
-            <div class="boxline"></div>
-            <div class="boxx"></div>
+            <div class="item-head">
+                <h3>AMZN</h3>
+                <button class="favorite-btn" data-title="AMZN" data-content="เนื้อหาของรายการที่ 3">☆</button>
+            </div>
             <div class="tradingview-widget-container">
                 <script type="text/javascript"
                     src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
                         {
                             "symbol": "NASDAQ:AMZN",
                                 "width": "100%",
-                                    "height": "220",
+                                    "height": "160",
                                         "locale": "th",
                                             "dateRange": "1D",
                                                 "colorTheme": "dark",
@@ -93,19 +105,20 @@
                         }
                     </script>
             </div>
-            <button class="favorite-btn" data-title="AMZN" data-content="เนื้อหาของรายการที่ 3">☆ Favorite</button>
+
         </div>
         <div class="item">
-            <h3>GOLD</h3>
-            <div class="boxline"></div>
-            <div class="boxx"></div>
+            <div class="item-head">
+                <h3>GOLD</h3>
+                <button class="favorite-btn" data-title="GOLD" data-content="เนื้อหาของรายการที่ 4">☆</button>
+            </div>
             <div class="tradingview-widget-container">
                 <script type="text/javascript"
                     src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
                         {
                             "symbol": "TVC:GOLD",
                                 "width": "100%",
-                                    "height": "220",
+                                    "height": "160",
                                         "locale": "th",
                                             "dateRange": "1D",
                                                 "colorTheme": "dark",
@@ -113,19 +126,20 @@
                         }
                     </script>
             </div>
-            <button class="favorite-btn" data-title="GOLD" data-content="เนื้อหาของรายการที่ 4">☆ Favorite</button>
+
         </div>
         <div class="item">
-            <h3>WM</h3>
-            <div class="boxline"></div>
-            <div class="boxx"></div>
+            <div class="item-head">
+                <h3>WM</h3>
+                <button class="favorite-btn" data-title="WM" data-content="เนื้อหาของรายการที่ 5">☆</button>
+            </div>
             <div class="tradingview-widget-container">
                 <script type="text/javascript"
                     src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js">
                         {
                             "symbol": "NYSE:WM",
                                 "width": "100%",
-                                    "height": "220",
+                                    "height": "160",
                                         "locale": "th",
                                             "dateRange": "1D",
                                                 "colorTheme": "dark",
@@ -133,11 +147,11 @@
                         }
                     </script>
             </div>
-            <button class="favorite-btn" data-title="WM" data-content="เนื้อหาของรายการที่ 5">☆ Favorite</button>
+
         </div>
     </div>
-
-    <script src="mainhome.js"></script>
+    <div class="box"></div>
+    <script src="script.js"></script>
 </body>
 
 </html>
