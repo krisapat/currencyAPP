@@ -22,13 +22,15 @@ body {
     color: #ffffff;
     margin-left: 20px;
 }
-.login-btn{
+
+.login-btn {
     background-color: transparent;
     border: none;
     color: #ffffff;
     font-size: 16px;
 
 }
+
 @media (min-width: 768px) {
     .navbar {
         display: flex;
@@ -54,6 +56,7 @@ body {
         align-items: center;
         transition: 0.3s;
     }
+
     .menu-item:hover {
         transform: scale(1.1);
         color: #00ac7c;
@@ -72,6 +75,10 @@ body {
     }
 
     .menu-item i {
+        margin-right: 8px;
+    }
+
+    form i {
         margin-right: 8px;
     }
 
@@ -106,7 +113,8 @@ body {
         text-decoration: none;
         transition: 0.3s;
     }
-    .bottom-nav .menu-item:hover{
+
+    .bottom-nav .menu-item:hover {
         transform: scale(1.1);
         color: #00ac7c;
     }
@@ -116,7 +124,7 @@ body {
         text-align: center;
         text-decoration: none;
         font-size: 15px;
-        margin-top: 5px;
+
     }
 
     .bottom-nav .menu-item-home i {
@@ -131,9 +139,28 @@ body {
 
     .bottom-nav .menu-item p {
         font-size: 15px;
+    }
+
+    .bottom-nav form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bottom-nav form i {
+        font-size: 15px;
         margin-top: 5px;
     }
+
+    .bottom-nav form input {
+        font-size: 15px;
+        margin-top: 2px;
+        font-family: "IBM Plex Sans", serif;
+        font-weight: 500;
+    }
 }
+
 /*nav*/
 .bigbox{
     width: 100%;
@@ -145,7 +172,7 @@ body {
 .container {
     width: 90%;
     max-width: 800px;
-    background: #1e1e1e;
+    background: linear-gradient(180deg, #282828, #040404);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 30px #ffffff;
