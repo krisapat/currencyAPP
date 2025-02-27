@@ -39,4 +39,3 @@ function showError(message){
 function closeErrorBar() {
     document.getElementById("error-bar").classList.remove("show");
 }
-
