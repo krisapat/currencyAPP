@@ -46,22 +46,18 @@ body {
     border-radius: 8px;
 }
 
-.add-stock input, select, #add-stock-btn {
+.add-stock input, select, #add-stock-btn,.delete-btn {
     margin: 5px;
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 5px;
     font-size: 14px;
-}
-
-#add-stock-btn{
     background-color: #ffffff;
     color: #1f1f1f;
-    border: none;
-    cursor: pointer;
 }
 
-button:hover {
+
+.delete-btn:hover {
     background-color: #111111;
     color: #ffffff;
 }

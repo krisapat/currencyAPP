@@ -60,7 +60,7 @@ function updatePortfolioList() {
     portfolioList.innerHTML = "";
     portfolio.forEach((item, index) => {
         let div = document.createElement("div");
-        div.innerHTML = `${item.stock} - ${item.percent}% <button onclick="removeStock(${index})">ลบ</button>`;
+        div.innerHTML = `${item.stock} - ${item.percent}% <button class="delete-btn" onclick="removeStock(${index})">ลบ</button>`;
         portfolioList.appendChild(div);
     });
 }
