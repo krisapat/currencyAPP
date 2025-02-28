@@ -31,7 +31,8 @@
                     $username = $_SESSION['username'];
                     echo "
                     <div class='nav-dropdown'>
-                        <button class='nav-dropdown-btn'><i class=\"fa-solid fa-user\"></i> $username</button>
+                        <i class=\"fa-solid fa-user\"></i>
+                        <button class='nav-dropdown-btn'>$username</button>
                         <div class='nav-dropdown-content'>
                             <a href='profile.php'>
                             <i class='fa-solid fa-user-circle'>
@@ -78,7 +79,8 @@
                     $username = $_SESSION['username'];
                     echo "
                     <div class='nav-dropdown'>
-                        <button class='nav-dropdown-btn-mb'><i class=\"fa-solid fa-user\"></i> $username</button>
+                        <i class=\"fa-solid fa-user\"></i>
+                        <button class='nav-dropdown-btn-mb'>$username</button>
                         <div class='nav-dropdown-content-mb'>
                             <a href='profile.php'>
                             <i class='fa-solid fa-user-circle'>

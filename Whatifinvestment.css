@@ -16,7 +16,7 @@ body {
 }
 
 .bigbox{
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@ body {
 .container {
     width: 90%;
     max-width: 800px;
-    background: #1f1f1f;
+    background: linear-gradient(180deg, #282828, #040404);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 30px #ffffff;
@@ -35,7 +35,7 @@ body {
 }
 
 .head {
-    font-size: 24px;
+    font-size: 2em;
     margin-bottom: 15px;
 }
 
@@ -46,7 +46,7 @@ body {
     border-radius: 8px;
 }
 
-.add-stock input, select, button {
+.add-stock input, select, #add-stock-btn {
     margin: 5px;
     padding: 10px;
     border: 1px solid #000000;
@@ -54,7 +54,7 @@ body {
     font-size: 14px;
 }
 
-button {
+#add-stock-btn{
     background-color: #ffffff;
     color: #1f1f1f;
     border: none;
@@ -79,122 +79,5 @@ button:hover {
 
 canvas {
     margin-top: 20px;
-    background: #1f1f1f;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: transparent;
 }
-/*nav*/
-.logo h1 {
-    font-size: 30px;
-    color: #ffffff;
-    margin-left: 20px;
-}
-.menu-items .login-btn{
-    background-color: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 16px;
-    
-}
-@media (min-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #1f1f1f;
-        padding: 10px 20px;
-        height: 55px;
-    }
-
-    .menu-items {
-        display: flex;
-        gap: 25px;
-    }
-
-    .menu-item {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        transition: 0.3s;
-    }
-    .menu-item:hover {
-        transform: scale(1.1);
-        color: #00ac7c;
-    }
-
-    .menu-item-function {
-        color: #00ac7c;
-        text-decoration: none;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-    }
-
-    .menu-item-function i {
-        margin-right: 8px;
-    }
-
-    .menu-item i {
-        margin-right: 8px;
-    }
-
-    .bottom-nav {
-        display: none;
-        /* ซ่อนเมนูด้านล่างสำหรับจอใหญ่ */
-    }
-}
-
-/* เมนูด้านล่างสำหรับมือถือ */
-@media (max-width: 767px) {
-    .navbar {
-        display: none;
-        /* ซ่อนเมนูด้านบนสำหรับมือถือ */
-    }
-
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #1f1f1f;
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-    }
-
-    .bottom-nav .menu-item {
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    .bottom-nav .menu-item:hover{
-        transform: scale(1.1);
-        color: #00ac7c;
-    }
-
-    .bottom-nav .menu-item-function {
-        color: #00ac7c;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    .bottom-nav .menu-item-function i {
-        font-size: 20px;
-        display: block;
-    }
-
-
-    .bottom-nav .menu-item i {
-        font-size: 20px;
-        display: block;
-    }
-
-    .bottom-nav .menu-item p {
-        font-size: 12px;
-        margin-top: 5px;
-    }
-}
-/*nav end*/
