@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2025 at 04:49 PM
+-- Generation Time: Feb 28, 2025 at 04:15 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,50 @@ SET time_zone = "+00:00";
 --
 -- Database: `currencyapp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `liked_stocks`
+--
+
+CREATE TABLE `liked_stocks` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `stock_id` int(11) NOT NULL,
+  `liked_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `liked_stocks`
+--
+
+INSERT INTO `liked_stocks` (`id`, `user_id`, `stock_id`, `liked_at`) VALUES
+(69, 10, 1, '2025-02-27 19:30:44'),
+(70, 10, 5, '2025-02-27 19:30:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stocks`
+--
+
+CREATE TABLE `stocks` (
+  `id` int(10) NOT NULL,
+  `stock_symbol` varchar(100) NOT NULL,
+  `stock_name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `stocks`
+--
+
+INSERT INTO `stocks` (`id`, `stock_symbol`, `stock_name`) VALUES
+(1, 'NASDAQ:NVDA', 'NVDA'),
+(2, 'NASDAQ:PLTR', 'PLTR'),
+(3, 'NASDAQ:AMZN', 'AMZN'),
+(4, 'TVC:GOLD', 'GOLD'),
+(5, 'NYSE:WM', 'WM');
 
 -- --------------------------------------------------------
 
@@ -51,6 +95,20 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `reset_token_hash`, 
 --
 
 --
+-- Indexes for table `liked_stocks`
+--
+ALTER TABLE `liked_stocks`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_like` (`user_id`,`stock_id`),
+  ADD KEY `stock_id` (`stock_id`);
+
+--
+-- Indexes for table `stocks`
+--
+ALTER TABLE `stocks`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -62,10 +120,33 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `liked_stocks`
+--
+ALTER TABLE `liked_stocks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+
+--
+-- AUTO_INCREMENT for table `stocks`
+--
+ALTER TABLE `stocks`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `liked_stocks`
+--
+ALTER TABLE `liked_stocks`
+  ADD CONSTRAINT `liked_stocks_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `liked_stocks_ibfk_2` FOREIGN KEY (`stock_id`) REFERENCES `stocks` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
