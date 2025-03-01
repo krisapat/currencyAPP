@@ -141,3 +141,10 @@ body {
     border-radius: 5px;
     font-size: 16px;
 }
+.links{
+    margin-bottom: 10px;
+}
+.backtohome{
+    color: #ffffff;
+    font-size: 14px;
+}

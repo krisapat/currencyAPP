@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data.includes("Registration successful")) {
                     // register สำเร็จ
                     alert("Registration successful");
-                    window.location.href = "./index.php";
+                    window.location.href = "../index.php";
                     console.error("Registration successful");
                 } else {
                     // register ไม่สำเร็จ

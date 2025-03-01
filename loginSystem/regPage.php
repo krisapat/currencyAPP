@@ -71,6 +71,7 @@
         <div class="links">
             <button id="regButton">Don't have an account? Register now</button>
         </div>
+        <a class="backtohome" href="../index.php">Back to home</a>
     </div>
 
     <!-- error message -->
