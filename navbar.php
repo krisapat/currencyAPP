@@ -34,9 +34,7 @@
                         <i class=\"fa-solid fa-user\"></i>
                         <button class='nav-dropdown-btn'>$username</button>
                         <div class='nav-dropdown-content'>
-                            <a href='profile.php'>
-                            <i class='fa-solid fa-user-circle'>
-                            </i>  Profile</a>
+                            
                             <a href='loginSystem/system/logout.php'>
                             <i class='fa-solid fa-sign-out-alt'></i> 
                              Logout</a>
@@ -82,9 +80,7 @@
                         <i class=\"fa-solid fa-user\"></i>
                         <button class='nav-dropdown-btn-mb'>$username</button>
                         <div class='nav-dropdown-content-mb'>
-                            <a href='profile.php'>
-                            <i class='fa-solid fa-user-circle'>
-                            </i>  Profile</a>
+                        
                             <a href='loginSystem/system/logout.php'>
                             <i class='fa-solid fa-sign-out-alt'></i> 
                              Logout</a>
@@ -101,42 +97,62 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const currentPath = window.location.pathname.split("/").pop(); // ดึงชื่อไฟล์ เช่น "index.php"
-        const menuItems = document.querySelectorAll(".menu-item");
+    const fullPath = window.location.pathname + window.location.search + window.location.hash;
+    const currentPath = window.location.pathname.split("/").pop(); // ดึงชื่อไฟล์ เช่น "index.php"
+    const menuItems = document.querySelectorAll(".menu-item");
 
-        menuItems.forEach(item => {
-            if (item.getAttribute("href") === currentPath) {
-                item.classList.add("menu-item-home"); // เพิ่มคลาส active
+    // รายชื่อหน้าแม่-หน้าย่อย (กำหนดความสัมพันธ์)
+    const pageHierarchy = {
+        "index.php": ["stock_fav.php"], 
+        "mainfunction.php": ["CurrencyConverter.php", "dca.php", "Whatifinvestment.php"]
+    };
+
+    menuItems.forEach(item => {
+        let href = item.getAttribute("href");
+        let hrefFile = href.split("?")[0].split("#")[0].split("/").pop(); // ดึงชื่อไฟล์จาก href
+        
+        // ตรวจสอบว่า href เป็นไฟล์หลักที่ตรงกับ currentPath หรือไม่
+        let isActive = (hrefFile === currentPath || fullPath.includes(href));
+
+        // ตรวจสอบว่าหน้าปัจจุบันเป็น "หน้าย่อย" ของหน้าแม่ใน pageHierarchy หรือไม่
+        Object.keys(pageHierarchy).forEach(parentPage => {
+            if (pageHierarchy[parentPage].includes(currentPath) && hrefFile === parentPage) {
+                isActive = true; // ถ้าหน้าปัจจุบันเป็นหน้าย่อย ให้เมนูของหน้าแม่ active ด้วย
             }
         });
 
-        const dropdownBtn = document.querySelector(".nav-dropdown-btn");
-        const dropdownContent = document.querySelector(".nav-dropdown-content");
-
-        dropdownBtn.addEventListener("click", function (event) {
-            event.stopPropagation(); // ป้องกันการปิดเมนูเมื่อกดปุ่ม
-            dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-
-        });
-
-        document.addEventListener("click", function () {
-            dropdownContent.style.display = "none"; // ปิดเมนูเมื่อคลิกที่อื่น
-        });
-
-        const dropdownBtn2 = document.querySelector(".nav-dropdown-btn-mb");
-        const dropdownContent2 = document.querySelector(".nav-dropdown-content-mb");
-
-        dropdownBtn2.addEventListener("click", function (event) {
-            event.stopPropagation(); // ป้องกันการปิดเมนูเมื่อกดปุ่ม
-            dropdownContent2.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-
-        });
-
-        document.addEventListener("click", function () {
-            dropdownContent2.style.display = "none"; // ปิดเมนูเมื่อคลิกที่อื่น
-        });
+        if (isActive) {
+            item.classList.add("menu-item-home");
+        } else {
+            item.classList.remove("menu-item-home");
+        }
     });
 
+    // --- ฟังก์ชัน dropdown ---
+    const dropdownBtn = document.querySelector(".nav-dropdown-btn");
+    const dropdownContent = document.querySelector(".nav-dropdown-content");
+
+    dropdownBtn.addEventListener("click", function (event) {
+        event.stopPropagation(); // ป้องกันการปิดเมนูเมื่อกดปุ่ม
+        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", function () {
+        dropdownContent.style.display = "none"; // ปิดเมนูเมื่อคลิกที่อื่น
+    });
+
+    const dropdownBtn2 = document.querySelector(".nav-dropdown-btn-mb");
+    const dropdownContent2 = document.querySelector(".nav-dropdown-content-mb");
+
+    dropdownBtn2.addEventListener("click", function (event) {
+        event.stopPropagation(); // ป้องกันการปิดเมนูเมื่อกดปุ่ม
+        dropdownContent2.style.display = dropdownContent2.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", function () {
+        dropdownContent2.style.display = "none"; // ปิดเมนูเมื่อคลิกที่อื่น
+    });
+});
 
 
 </script>

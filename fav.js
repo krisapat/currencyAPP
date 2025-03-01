@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
         searchFavorites(this.value);
     });
 });
+function searchItems(query) {
+    query = query.toLowerCase();
+    document.querySelectorAll(".item").forEach(item => {
+        let title = item.querySelector("h3").textContent.toLowerCase();
+        item.style.display = title.includes(query) ? "block" : "none";
+    });
+}
 
 function loadFavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
