@@ -11,123 +11,25 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: Arial, sans-serif;
+    font-family: "IBM Plex Sans", serif;
+    font-weight: 500;
     text-align: center;
     color: white;
-}
-.logo h1 {
-    font-size: 30px;
-    color: white;
-    margin-left: 20px;
+    width: 100%;
+    position: absolute;
+    height: 110vh;
 }
 
-@media (min-width: 768px) {
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #1f1f1f;
-        padding: 10px 20px;
-    }
-
-    .menu-items {
-        display: flex;
-        gap: 25px;
-    }
-
-    .menu-item {
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        transition: 0.3s;
-    }
-    .menu-item:hover {
-        transform: scale(1.1);
-        color: #00ac7c;
-    }
-
-    .menu-item-function {
-        color: #00ac7c;
-        text-decoration: none;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-    }
-
-    .menu-item-function i {
-        margin-right: 8px;
-    }
-
-    .menu-item i {
-        margin-right: 8px;
-    }
-
-    .bottom-nav {
-        display: none;
-        /* ซ่อนเมนูด้านล่างสำหรับจอใหญ่ */
-    }
-}
-
-/* เมนูด้านล่างสำหรับมือถือ */
-@media (max-width: 767px) {
-    .navbar {
-        display: none;
-        /* ซ่อนเมนูด้านบนสำหรับมือถือ */
-    }
-
-    .bottom-nav {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #1f1f1f;
-        display: flex;
-        justify-content: space-around;
-        padding: 10px;
-    }
-
-    .bottom-nav .menu-item {
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-    .bottom-nav .menu-item:hover{
-        transform: scale(1.1);
-        color: #00ac7c;
-    }
-
-    .bottom-nav .menu-item-function {
-        color: #00ac7c;
-        text-align: center;
-        text-decoration: none;
-    }
-
-    .bottom-nav .menu-item-function i {
-        font-size: 20px;
-        display: block;
-    }
-
-
-    .bottom-nav .menu-item i {
-        font-size: 20px;
-        display: block;
-    }
-
-    .bottom-nav .menu-item p {
-        font-size: 12px;
-        margin-top: 5px;
-    }
-}
 .container {
     max-width: 600px;
+    width: 90%;
     margin: 50px auto;
     padding: 20px;
-    background-color: #1f1f1f;
+    background: linear-gradient(180deg, #282828, #040404);
     border-radius: 8px;
     box-shadow: 1px 1px 30px #ffffff;
+    font-family: "IBM Plex Sans Thai", serif;
+    font-weight: 500;
 }
 
 .head {
@@ -135,7 +37,7 @@ body {
     margin-bottom: 20px;
 }
 
-form {
+.container form {
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -145,7 +47,7 @@ label {
     font-size: 14px;
 }
 
-input {
+.input {
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ffffff;
@@ -171,4 +73,17 @@ h2 {
 canvas {
     margin-top: 20px;
     max-width: 100%;
+}
+.bigbox{
+    width: 100%;
+    padding-top: 10vh;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 55px; */
+    /* margin-bottom: 55px; */
+}
+.bottom-box{
+    height: 10vh;
 }
